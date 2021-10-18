@@ -71,6 +71,9 @@
 
   <!-- LICENSES -->
 
+  <string name="license_lsf" translatable="false">HTWG LSF Plan</string>
+  <string name="license_lsf_author" translatable="false">Henry Strobel</string>
+  <string name="license_lsf_link" translatable="false">https://github.com/GoneUp/Htwg_LsfPlan</string>
   <string name="license_jost" translatable="false">Jost* Typeface</string>
   <string name="license_jost_author" translatable="false">Owen Earl</string>
   <string name="license_jost_link" translatable="false">https://github.com/indestructible-type/Jost</string>
