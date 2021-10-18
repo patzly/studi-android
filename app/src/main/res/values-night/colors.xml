@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of Studi Android.
+  ~
+  ~ Studi Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Studi Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2021 by Patrick Zedler
+  -->
+
+<resources>
+
+  <color name="retro_green_fg">@color/retro_green_bg_black</color>
+  <color name="retro_green_fg_invert">#60837a</color>
+
+  <color name="retro_dirt_fg">#e2d9a2</color>
+  <color name="retro_dirt_bg">#c9c2a2</color>
+
+  <!-- PRIMARY -->
+
+  <color name="primary">#313235</color>
+
+  <!-- BACKGROUND -->
+
+  <color name="background">#1e1f22</color>
+  <color name="on_background">@color/grey200</color>
+  <color name="on_background_secondary">@color/grey600</color>
+  <color name="on_background_tertiary">#292a2e</color>
+
+  <!-- SURFACE -->
+
+  <color name="surface">#303030</color>
+  <color name="on_surface">@color/grey200</color>
+
+  <!-- HIGHLIGHT -->
+
+  <color name="highlight">#11bdbdbd</color>
+  <color name="highlight_secondary">#11bdbdbd</color>
+
+  <!-- STROKES -->
+
+  <color name="stroke_secondary">#3a3b3e</color>
+
+  <!-- ICONS -->
+
+  <color name="icon">@color/grey400</color>
+
+  <color name="vending_blue">#00000000</color>
+  <color name="vending_red">#00000000</color>
+  <color name="vending_green">#00000000</color>
+  <color name="vending_yellow">@color/background</color>
+
+</resources>

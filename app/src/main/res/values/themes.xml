@@ -1,0 +1,65 @@
+<!--
+  ~ This file is part of Studi Android.
+  ~
+  ~ Studi Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Studi Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2021 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+  <style name="Theme.Studi" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <item name="colorPrimary">@color/background</item>
+    <item name="colorPrimaryDark">@color/background</item>
+    <item name="colorOnPrimary">@color/on_background</item>
+
+    <item name="colorSecondary">@color/secondary</item>
+    <item name="colorOnSecondary">@color/on_secondary</item>
+
+    <item name="android:colorBackground">@color/background</item>
+    <item name="colorOnBackground">@color/on_background</item>
+    <item name="android:colorForeground">@color/on_background</item>
+    <item name="android:navigationBarColor">@color/background</item>
+
+    <item name="colorSurface">@color/surface</item>
+    <item name="colorOnSurface">@color/on_surface</item>
+
+    <item name="snackbarTextViewStyle">@style/Widget.Studi.Snackbar.TextView</item>
+    <item name="snackbarButtonStyle">@style/Widget.Studi.Button.TextButton.Snackbar</item>
+
+    <item name="android:colorControlNormal">@color/on_background</item>
+    <item name="android:colorControlActivated">@color/secondary</item>
+    <item name="android:colorControlHighlight">@color/highlight</item>
+    <item name="android:colorEdgeEffect">@color/highlight</item>
+
+    <item name="actionOverflowButtonStyle">@style/Widget.Studi.OverFlow</item>
+    <item name="actionOverflowMenuStyle">@style/Widget.Studi.PopupMenu</item>
+
+    <item name="android:fontFamily">@font/jost_book</item>
+
+    <item name="bottomSheetDialogTheme">@style/Theme.Studi.BottomSheetDialog</item>
+
+    <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/background</item>
+    <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@drawable/splash_logo_anim</item>
+    <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">1000</item>
+  </style>
+
+  <style
+    name="Theme.Studi.BottomSheetDialog"
+    parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+    <item name="enableEdgeToEdge">true</item>
+    <item name="android:navigationBarColor">@color/transparent</item>
+  </style>
+
+</resources>

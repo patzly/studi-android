@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of Studi Android.
+  ~
+  ~ Studi Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Studi Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2021 by Patrick Zedler
+  -->
+
+<resources>
+
+  <color name="white">#fff</color>
+  <color name="black">#000</color>
+  <color name="transparent">#00000000</color>
+
+  <color name="retro_green">#789f8a</color>
+  <color name="retro_green_fg">#60837a</color>
+  <color name="retro_green_fg_invert">@color/retro_green</color>
+  <color name="retro_green_bg_white">#689283</color>
+  <color name="retro_green_bg_black">#789f8a</color>
+
+  <color name="retro_yellow">#deb853</color>
+
+  <color name="retro_dirt">#e2d9a2</color>
+  <color name="retro_dirt_fg">#bab277</color>
+  <color name="retro_dirt_bg">@color/retro_dirt</color>
+
+  <color name="retro_dark">#0a373a</color>
+
+  <color name="grey200">#e8eaed</color>
+  <color name="grey300">#dadce0</color>
+  <color name="grey400">#bdc1c6</color>
+  <color name="grey500">#9aa0a6</color>
+  <color name="grey600">#80868b</color>
+  <color name="grey800">#3c4043</color>
+
+  <!-- PRIMARY -->
+
+  <color name="primary">@color/white</color>
+
+  <!-- SECONDARY -->
+
+  <color name="secondary">@color/retro_green_fg</color>
+  <color name="on_secondary">@color/white</color>
+  <color name="highlight_on_secondary">#22ffffff</color>
+
+  <!-- BACKGROUND -->
+
+  <color name="background">@color/white</color>
+  <color name="on_background">#dd000000</color>
+  <color name="on_background_secondary">@color/grey600</color>
+  <color name="on_background_tertiary">#edeff1</color>
+
+  <!-- SURFACE -->
+
+  <color name="surface">@color/white</color>
+  <color name="on_surface">@color/black</color>
+
+  <!-- HIGHLIGHT -->
+
+  <color name="highlight">#11000000</color>
+  <color name="highlight_secondary">#08000000</color>
+
+  <!-- STROKES -->
+
+  <color name="stroke_secondary">@color/grey400</color>
+
+  <!-- ICONS -->
+
+  <color name="icon">@color/grey800</color>
+
+  <color name="vending_blue">#00d3ff</color>
+  <color name="vending_red">#f43249</color>
+  <color name="vending_green">#00f176</color>
+  <color name="vending_yellow">#ffc900</color>
+
+</resources>
