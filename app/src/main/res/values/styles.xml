@@ -56,7 +56,7 @@
     name="Widget.Studi.Button.UnelevatedButton"
     parent="Widget.MaterialComponents.Button.UnelevatedButton">
     <item name="rippleColor">@color/highlight_on_secondary</item>
-    <item name="backgroundTint">@color/retro_green_bg_white</item>
+    <item name="backgroundTint">@color/htwg_green</item>
     <item name="android:textColor">@color/on_secondary</item>
     <item name="android:textSize">14.5sp</item>
     <item name="android:fontFamily">@font/jost_bold</item>
@@ -72,7 +72,7 @@
     <item name="contentPadding">16dp</item>
     <item name="cardElevation">0dp</item>
     <item name="cardCornerRadius">12dp</item>
-    <item name="cardBackgroundColor">@color/on_background_tertiary</item>
+    <item name="cardBackgroundColor">@color/surface</item>
     <item name="rippleColor">@color/highlight_secondary</item>
   </style>
 

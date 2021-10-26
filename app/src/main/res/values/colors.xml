@@ -24,42 +24,33 @@
   <color name="black">#000</color>
   <color name="transparent">#00000000</color>
 
-  <color name="retro_green">#789f8a</color>
-  <color name="retro_green_fg">#60837a</color>
-  <color name="retro_green_fg_invert">@color/retro_green</color>
-  <color name="retro_green_bg_white">#689283</color>
-  <color name="retro_green_bg_black">#789f8a</color>
+  <color name="htwg_blue">#d4dde2</color>
+  <color name="htwg_green">#009c91</color>
+  <color name="htwg_dark">#344050</color>
 
-  <color name="retro_yellow">#deb853</color>
+  <color name="yellow">#deb853</color>
 
-  <color name="retro_dirt">#e2d9a2</color>
-  <color name="retro_dirt_fg">#bab277</color>
-  <color name="retro_dirt_bg">@color/retro_dirt</color>
-
-  <color name="retro_dark">#0a373a</color>
-
-  <color name="grey200">#e8eaed</color>
-  <color name="grey300">#dadce0</color>
-  <color name="grey400">#bdc1c6</color>
-  <color name="grey500">#9aa0a6</color>
-  <color name="grey600">#80868b</color>
-  <color name="grey800">#3c4043</color>
+  <color name="htwg_grey1">#e7e7e7</color>
+  <color name="htwg_grey2">#b4b4b4</color>
+  <color name="htwg_grey3">#787878</color>
+  <color name="htwg_grey4">#3b3b3b</color>
+  <color name="htwg_grey5">#2b2b2b</color>
 
   <!-- PRIMARY -->
 
-  <color name="primary">@color/white</color>
+  <color name="primary">@color/htwg_blue</color>
 
   <!-- SECONDARY -->
 
-  <color name="secondary">@color/retro_green_fg</color>
+  <color name="secondary">@color/htwg_green</color>
   <color name="on_secondary">@color/white</color>
   <color name="highlight_on_secondary">#22ffffff</color>
 
   <!-- BACKGROUND -->
 
-  <color name="background">@color/white</color>
+  <color name="background">@color/htwg_blue</color>
   <color name="on_background">#dd000000</color>
-  <color name="on_background_secondary">@color/grey600</color>
+  <color name="on_background_secondary">@color/htwg_grey3</color>
   <color name="on_background_tertiary">#edeff1</color>
 
   <!-- SURFACE -->
@@ -74,11 +65,11 @@
 
   <!-- STROKES -->
 
-  <color name="stroke_secondary">@color/grey400</color>
+  <color name="stroke_secondary">@color/htwg_grey1</color>
 
   <!-- ICONS -->
 
-  <color name="icon">@color/grey800</color>
+  <color name="icon">@color/htwg_grey4</color>
 
   <color name="vending_blue">#00d3ff</color>
   <color name="vending_red">#f43249</color>

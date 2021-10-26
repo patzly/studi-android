@@ -29,11 +29,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
+    <FrameLayout
       android:layout_width="match_parent"
       android:layout_height="?android:actionBarSize"
-      android:gravity="center_vertical"
-      android:orientation="horizontal">
+      android:gravity="center_vertical">
 
       <FrameLayout
         android:id="@+id/frame_overview_close"
@@ -61,10 +60,9 @@
 
       <TextView
         style="@style/Widget.Studi.TextView.Toolbar"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_weight="1"
+        android:layout_gravity="center"
         android:text="@string/app_name" />
 
       <androidx.appcompat.widget.Toolbar
@@ -74,7 +72,7 @@
         android:layout_gravity="end"
         app:menu="@menu/menu_main" />
 
-    </LinearLayout>
+    </FrameLayout>
 
   </com.google.android.material.appbar.AppBarLayout>
 
