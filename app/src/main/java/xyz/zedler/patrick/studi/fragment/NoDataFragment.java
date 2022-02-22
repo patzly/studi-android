@@ -87,12 +87,6 @@ public class NoDataFragment extends BaseFragment implements OnClickListener {
     boolean startedFromLauncher = activity.getIntent() != null
         && activity.getIntent().hasCategory("android.intent.category.LAUNCHER");
 
-    binding.frameOverviewClose.setOnClickListener(v -> {
-      if (getViewUtil().isClickEnabled()) {
-        performHapticClick();
-        activity.finish();
-      }
-    });
     /*if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
       binding.appBarOverview.setOnClickListener(v -> {
         if (viewUtilLogo.isClickEnabled()) {

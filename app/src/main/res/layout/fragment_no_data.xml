@@ -35,26 +35,21 @@
       android:gravity="center_vertical">
 
       <FrameLayout
-        android:id="@+id/frame_overview_close"
+        android:id="@+id/frame_no_data_logo"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="20dp"
-        android:background="?attr/actionBarItemBackground"
-        android:clickable="true"
         android:gravity="center"
-        android:contentDescription="@string/action_close"
-        android:tooltipText="@string/action_close"
-        android:focusable="true"
-        tools:targetApi="o">
+        android:layout_gravity="center_vertical|start">
 
         <ImageView
-          android:id="@+id/image_overview_close"
-          android:layout_width="24dp"
-          android:layout_height="24dp"
+          android:id="@+id/image_no_data_logo"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
           android:layout_gravity="center"
           android:importantForAccessibility="no"
-          android:src="@drawable/ic_round_close" />
+          android:src="@drawable/ic_round_studi_logo" />
 
       </FrameLayout>
 
