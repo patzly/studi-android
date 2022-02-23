@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2021 by Patrick Zedler
+ * Copyright (c) 2022 by Patrick Zedler
  */
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
@@ -24,8 +24,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.3'
-        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5'
+        classpath 'com.android.tools.build:gradle:7.1.1'
+        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.4.1'
     }
 }
 

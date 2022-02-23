@@ -1,20 +1,20 @@
 /*
- * This file is part of Doodle Android.
+ * This file is part of Studi Android.
  *
- * Doodle Android is free software: you can redistribute it and/or modify
+ * Studi Android is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Doodle Android is distributed in the hope that it will be useful,
+ * Studi Android is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+ * along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2020-2021 by Patrick Zedler
+ * Copyright (c) 2022 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.studi.util;
@@ -38,18 +38,12 @@ import androidx.annotation.NonNull;
 
 public class SystemUiUtil {
 
-  public final static int SCRIM = 0x55000000;
-  public final static int SCRIM_OPAQUE = 0xFFAAAAAA;
-  public final static int SCRIM_DARK = 0xB31E1F22;
-  public final static int SCRIM_DARK_DIALOG = 0xFF0c0c0e;
-  public final static int SCRIM_DARK_DIALOG_DIVIDER = 0xFF202020;
-  public final static int SCRIM_DARK_SURFACE = 0xB3303030;
-  public final static int SCRIM_LIGHT = 0xB3FFFFFF;
-  public final static int SCRIM_LIGHT_DIALOG = 0xFF666666;
-  public final static int SCRIM_LIGHT_DIALOG_DIVIDER = 0xFF555555;
+  public static final int SCRIM = 0x55000000;
+  public static final int SCRIM_DARK_DIALOG = 0xFF0c0c0e;
+  public static final int SCRIM_LIGHT_DIALOG = 0xFF666666;
 
   public static void layoutEdgeToEdge(Window window) {
-    if (Build.VERSION.SDK_INT >= VERSION_CODES.R) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
       window.setDecorFitsSystemWindows(false);
     } else {
       int flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
@@ -59,12 +53,12 @@ public class SystemUiUtil {
   }
 
   public static void setLightNavigationBar(Window window) {
-    if (Build.VERSION.SDK_INT >= VERSION_CODES.R) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
       window.getInsetsController().setSystemBarsAppearance(
           WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
           WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
       );
-    } else if (Build.VERSION.SDK_INT >= VERSION_CODES.O) {
+    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
       View decorView = window.getDecorView();
       decorView.setSystemUiVisibility(
           decorView.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
@@ -73,12 +67,12 @@ public class SystemUiUtil {
   }
 
   public static void setLightNavigationBar(Window window, View view) {
-    if (Build.VERSION.SDK_INT >= VERSION_CODES.R) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
       window.getInsetsController().setSystemBarsAppearance(
           WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
           WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
       );
-    } else if (Build.VERSION.SDK_INT >= VERSION_CODES.O) {
+    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
       view.setSystemUiVisibility(
           view.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
       );
@@ -86,7 +80,7 @@ public class SystemUiUtil {
   }
 
   public static void setLightStatusBar(Window window) {
-    if (Build.VERSION.SDK_INT >= VERSION_CODES.R) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
       window.getInsetsController().setSystemBarsAppearance(
           WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
           WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
@@ -135,7 +129,7 @@ public class SystemUiUtil {
 
   public static int getDisplayWidth(Context context) {
     WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-    if (Build.VERSION.SDK_INT >= VERSION_CODES.R) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
       WindowMetrics windowMetrics = windowManager.getCurrentWindowMetrics();
       Insets insets = windowMetrics.getWindowInsets().getInsetsIgnoringVisibility(
           WindowInsets.Type.systemBars()
@@ -152,7 +146,7 @@ public class SystemUiUtil {
 
   public static int getDisplayHeight(Context context) {
     WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-    if (Build.VERSION.SDK_INT >= VERSION_CODES.R) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
       WindowMetrics windowMetrics = windowManager.getCurrentWindowMetrics();
       Insets insets = windowMetrics.getWindowInsets().getInsetsIgnoringVisibility(
           WindowInsets.Type.systemBars()

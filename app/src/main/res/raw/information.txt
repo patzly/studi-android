@@ -1,1 +1,44 @@
-Bla bla blub
+These live wallpapers are based on the original Doodle live wallpaper collection of the Google Pixel 4 and the leaked (but never officially released) Material You static wallpaper collection of the Pixel 6, extended with additional wallpapers from Chrome OS.
+They are completely recreated from scratch, nothing except the look is taken from the original.
+
+<b>Advantages over the original:</b>
+
+- Permanent animation (when tilting the device) is optional and customizable
+- No battery-hungry 3D engine
+- Support for Android 11 zoom effect and Android 12 color extraction (Material You)
+- Optional zoom effect when unlocking the device
+- Suitable for less powerful devices with power-efficient and optional animations
+- Improved text contrast (dark text for light themes instead of white text with shadow)
+- Also suitable for larger devices like tablets (scaling option available)
+- Many additional customization options
+
+<b>Troubleshooting:</b>
+
+Parallax on page swipe doesn't work?
+You need to turn on background scrolling in your launcher's settings if you have disabled it before.
+
+"Set wallpaper" button disappears after applying the wallpaper?
+This is intended, you only have to apply it once. Select another wallpaper design in the appearance section to change it.
+
+Changed wallpaper colors not updating on Android 12?
+You need to turn off your screen. The next time you turn it back on, the new colors should be applied to the whole system. It might require some interaction with the device for the home screen widgets to also update their colors.
+
+Parallax/zoom animations stop after closing Doodle settings?
+This seems like a bug of MIUI 12.5, if you instead apply the wallpaper in your system's wallpaper picker it should work. This possibility is also explained when you long-tap on the big button to set the wallpaper.
+
+Wallpaper not applied to lockscreen?
+Try searching for your device's name and this question on the Internet to get possible solutions.
+
+You don't want the wallpaper to be applied to your lockscreen?
+If your device doesn't display you the option to apply it only to your home screen, then this is not supported by your device.
+
+Custom shapes like on Pixel 4 are not available for Doodle collection?
+This feature is not supported by this app. The rendering method doesn't support dynamic changes like custom shapes, a replication of this feature would be way too time consuming.
+
+<b>Not enough options?</b>
+
+There won't be many more wallpapers added to this app in the future. Doodle is about doodle-styled, flat-shaped (non-3D) original Google Pixel wallpapers (with a few exceptions), these criteria are not met by many of them out there.
+Every wallpaper design available in this app required days or weeks to implement, it's not as easy as you might think (shape extraction, dark version creation, optimization for parallax rendering and much more).
+When I find enough time beside university, I will expand the Material You collection and the collection of wallpapers by Anna Kövecses.
+
+So please be patient and watch HowToMen, an amazing tech YouTube channel for Android fans, while waiting for the next update!

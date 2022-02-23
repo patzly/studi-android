@@ -1,20 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ This file is part of Doodle Android.
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of Studi Android.
   ~
-  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ Studi Android is free software: you can redistribute it and/or modify
   ~ it under the terms of the GNU General Public License as published by
   ~ the Free Software Foundation, either version 3 of the License, or
   ~ (at your option) any later version.
   ~
-  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ Studi Android is distributed in the hope that it will be useful,
   ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
   ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   ~ GNU General Public License for more details.
   ~
   ~ You should have received a copy of the GNU General Public License
-  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~ along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
   ~
-  ~ Copyright (c) 2020-2021 by Patrick Zedler
+  ~ Copyright (c) 2022 by Patrick Zedler
   -->
 
 <navigation
@@ -22,16 +23,24 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/navigation_main"
-  app:startDestination="@id/noDataFragment">
+  app:startDestination="@id/planFragment">
 
   <fragment
-    android:id="@+id/noDataFragment"
-    android:name="xyz.zedler.patrick.studi.fragment.NoDataFragment"
-    android:label="fragment_overview"
-    tools:layout="@layout/fragment_no_data" >
+    android:id="@+id/planFragment"
+    android:name="xyz.zedler.patrick.studi.fragment.PlanFragment"
+    android:label="fragment_plan"
+    tools:layout="@layout/fragment_plan" >
 
     <action
-      android:id="@+id/action_no_data_to_about"
+      android:id="@+id/action_plan_to_settings"
+      app:destination="@id/settingsFragment"
+      app:enterAnim="@anim/anim_enter_end"
+      app:exitAnim="@anim/anim_exit_start"
+      app:popEnterAnim="@anim/anim_enter_start"
+      app:popExitAnim="@anim/anim_exit_end" />
+
+    <action
+      android:id="@+id/action_plan_to_about"
       app:destination="@id/aboutFragment"
       app:enterAnim="@anim/anim_enter_end"
       app:exitAnim="@anim/anim_exit_start"
@@ -40,32 +49,27 @@
 
     <action
       android:id="@+id/action_overview_to_text_dialog"
-      app:destination="@id/textBottomSheetDialogFragment">
-
-      <argument
-        android:name="file"
-        app:argType="reference"
-        android:defaultValue="0" />
-
-      <argument
-        android:name="title"
-        app:argType="reference"
-        android:defaultValue="0" />
-
-      <argument
-        android:name="link"
-        app:argType="reference"
-        android:defaultValue="0" />
-
-    </action>
+      app:destination="@id/textBottomSheetDialogFragment" />
 
     <action
-      android:id="@+id/action_no_data_to_feedback_dialog"
+      android:id="@+id/action_overview_to_feedback_dialog"
       app:destination="@id/feedbackBottomSheetDialogFragment" />
 
     <action
-      android:id="@+id/action_no_data_to_changelog_dialog"
+      android:id="@+id/action_overview_to_changelog_dialog"
       app:destination="@id/changelogBottomSheetDialogFragment" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/settingsFragment"
+    android:name="xyz.zedler.patrick.studi.fragment.SettingsFragment"
+    android:label="fragment_settings"
+    tools:layout="@layout/fragment_settings">
+
+    <action
+      android:id="@+id/action_other_to_feedback_dialog"
+      app:destination="@id/feedbackBottomSheetDialogFragment" />
 
   </fragment>
 
@@ -110,6 +114,11 @@
       android:defaultValue="0" />
 
   </dialog>
+
+  <dialog
+    android:id="@+id/languagesBottomSheetDialogFragment"
+    android:name="xyz.zedler.patrick.studi.fragment.dialog.LanguagesBottomSheetDialogFragment"
+    android:label="dialog_languages" />
 
   <dialog
     android:id="@+id/feedbackBottomSheetDialogFragment"

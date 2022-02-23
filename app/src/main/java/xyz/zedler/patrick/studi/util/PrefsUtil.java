@@ -1,34 +1,32 @@
 /*
- * This file is part of Doodle Android.
+ * This file is part of Studi Android.
  *
- * Doodle Android is free software: you can redistribute it and/or modify
+ * Studi Android is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Doodle Android is distributed in the hope that it will be useful,
+ * Studi Android is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+ * along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2020-2021 by Patrick Zedler
+ * Copyright (c) 2022 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.studi.util;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
 import java.util.Objects;
 
 public class PrefsUtil {
 
-  private final static String TAG = PrefsUtil.class.getSimpleName();
+  private static final String TAG = PrefsUtil.class.getSimpleName();
 
   private final SharedPreferences sharedPrefs;
 
@@ -112,13 +110,5 @@ public class PrefsUtil {
     if (sharedPrefs.contains(key)) {
       sharedPrefs.edit().remove(key).apply();
     }
-  }
-
-  public static void restartToApply(Activity activity, Class<Activity> launchClass) {
-    Intent intent = new Intent(activity, launchClass);
-    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-    activity.startActivity(intent);
-    activity.finish();
-    Runtime.getRuntime().exit(0);
   }
 }

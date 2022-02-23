@@ -1,20 +1,20 @@
 /*
- * This file is part of Doodle Android.
+ * This file is part of Studi Android.
  *
- * Doodle Android is free software: you can redistribute it and/or modify
+ * Studi Android is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Doodle Android is distributed in the hope that it will be useful,
+ * Studi Android is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+ * along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2020-2021 by Patrick Zedler
+ * Copyright (c) 2022 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.studi.fragment;
@@ -68,10 +68,14 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
     systemBarBehavior.setScroll(binding.scrollAbout, binding.linearAboutContainer);
     systemBarBehavior.setUp();
 
-    new ScrollBehavior(activity).setUpScroll(
-        binding.appBarAbout, binding.scrollAbout, true
-    );
+    new ScrollBehavior(activity).setUpScroll(binding.appBarAbout, binding.scrollAbout, true);
 
+    binding.toolbarAbout.setNavigationOnClickListener(v -> {
+      if (getViewUtil().isClickEnabled()) {
+        performHapticClick();
+        navigateUp();
+      }
+    });
     binding.toolbarAbout.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
       if (id == R.id.action_share) {
@@ -80,7 +84,7 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
         return true;
       } else if (id == R.id.action_feedback) {
         performHapticClick();
-        getNavController().navigate(AboutFragmentDirections.actionAboutToFeedbackDialog());
+        navigate(AboutFragmentDirections.actionAboutToFeedbackDialog());
         return true;
       } else {
         return false;
@@ -89,12 +93,12 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
 
     ViewUtil.setOnClickListeners(
         this,
-        binding.frameAboutBack,
         binding.linearAboutChangelog,
         binding.linearAboutDeveloper,
         binding.linearAboutVending,
         binding.linearAboutGithub,
         binding.linearAboutLicenseJost,
+        binding.linearAboutLicenseLsf,
         binding.linearAboutLicenseMaterialComponents,
         binding.linearAboutLicenseMaterialIcons
     );
@@ -103,12 +107,9 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.frame_about_back && getViewUtil().isClickEnabled()) {
+    if (id == R.id.linear_about_changelog && getViewUtil().isClickEnabled()) {
       performHapticClick();
-      getNavController().navigateUp();
-    } else if (id == R.id.linear_about_changelog && getViewUtil().isClickEnabled()) {
-      performHapticClick();
-      getNavController().navigate(AboutFragmentDirections.actionAboutToChangelogDialog());
+      navigate(AboutFragmentDirections.actionAboutToChangelogDialog());
       ViewUtil.startIcon(binding.imageAboutChangelog);
     } else if (id == R.id.linear_about_developer && getViewUtil().isClickEnabled()) {
       performHapticClick();
@@ -133,6 +134,10 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
       performHapticClick();
       ViewUtil.startIcon(binding.imageAboutLicenseJost);
       showLicense(R.raw.license_ofl, R.string.license_jost, R.string.license_jost_link);
+    } else if (id == R.id.linear_about_license_lsf && getViewUtil().isClickEnabled()) {
+      performHapticClick();
+      ViewUtil.startIcon(binding.imageAboutLicenseLsf);
+      showLicense(R.raw.license_gnu, R.string.license_lsf, R.string.license_lsf_link);
     } else if (
         id == R.id.linear_about_license_material_components && getViewUtil().isClickEnabled()
     ) {
@@ -160,6 +165,6 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
     action.setFile(file);
     action.setTitle(title);
     action.setLink(link);
-    getNavController().navigate(action);
+    navigate(action);
   }
 }

@@ -14,7 +14,7 @@
   ~ You should have received a copy of the GNU General Public License
   ~ along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
   ~
-  ~ Copyright (c) 2020-2021 by Patrick Zedler
+  ~ Copyright (c) 2022 by Patrick Zedler
   -->
 
 <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -29,51 +29,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="?android:actionBarSize"
-      android:gravity="center_vertical"
-      android:orientation="horizontal">
-
-      <FrameLayout
-        android:id="@+id/frame_about_back"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="20dp"
-        android:background="?attr/actionBarItemBackground"
-        android:clickable="true"
-        android:gravity="center"
-        android:contentDescription="@string/action_back"
-        android:tooltipText="@string/action_back"
-        android:focusable="true"
-        tools:targetApi="o">
-
-        <ImageView
-          android:layout_width="24dp"
-          android:layout_height="24dp"
-          android:layout_gravity="center"
-          android:importantForAccessibility="no"
-          android:src="@drawable/ic_round_arrow_back" />
-
-      </FrameLayout>
-
-      <TextView
-        style="@style/Widget.Studi.TextView.Toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_weight="1"
-        android:text="@string/title_about" />
-
-      <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_about"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="end"
-        app:menu="@menu/menu_main" />
-
-    </LinearLayout>
+    <com.google.android.material.appbar.MaterialToolbar
+      android:id="@+id/toolbar_about"
+      style="@style/Widget.Doodle.Toolbar.Back"
+      app:title="@string/about_title"
+      app:menu="@menu/menu_main" />
 
   </com.google.android.material.appbar.AppBarLayout>
 
@@ -81,7 +41,7 @@
     android:id="@+id/scroll_about"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="?android:actionBarSize">
+    android:layout_marginTop="?attr/actionBarSize">
 
     <LinearLayout
       android:id="@+id/linear_about_container"
@@ -91,21 +51,21 @@
       android:paddingBottom="8dp"
       android:orientation="vertical">
 
-      <LinearLayout style="@style/Widget.Studi.LinearLayout.ListItem.TwoLine">
+      <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine">
 
         <ImageView
-          style="@style/Widget.Studi.ImageView.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:src="@drawable/ic_round_info_outline"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Widget.Studi.LinearLayout.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.OverLine"
+            style="@style/Widget.Doodle.TextView.ListItem.OverLine"
             android:text="@string/about_version" />
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/versionName" />
 
         </LinearLayout>
@@ -114,22 +74,22 @@
 
       <LinearLayout
         android:id="@+id/linear_about_changelog"
-        style="@style/Widget.Studi.LinearLayout.ListItem.TwoLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
         <ImageView
           android:id="@+id/image_about_changelog"
-          style="@style/Widget.Studi.ImageView.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:src="@drawable/ic_round_history_anim"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Widget.Studi.LinearLayout.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/about_changelog" />
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.Description"
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
             android:text="@string/about_changelog_description" />
 
         </LinearLayout>
@@ -138,22 +98,22 @@
 
       <LinearLayout
         android:id="@+id/linear_about_developer"
-        style="@style/Widget.Studi.LinearLayout.ListItem.TwoLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
         <ImageView
           android:id="@+id/image_about_developer"
-          style="@style/Widget.Studi.ImageView.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:src="@drawable/ic_round_person_anim"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Widget.Studi.LinearLayout.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.OverLine"
+            style="@style/Widget.Doodle.TextView.ListItem.OverLine"
             android:text="@string/about_developer" />
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/app_developer" />
 
         </LinearLayout>
@@ -162,22 +122,22 @@
 
       <LinearLayout
         android:id="@+id/linear_about_vending"
-        style="@style/Widget.Studi.LinearLayout.ListItem.TwoLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
         <ImageView
           android:id="@+id/image_about_vending"
-          style="@style/Widget.Studi.ImageView.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon.Colored"
           android:src="@drawable/ic_round_vending_anim"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Widget.Studi.LinearLayout.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.OverLine"
+            style="@style/Widget.Doodle.TextView.ListItem.OverLine"
             android:text="@string/about_vending" />
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/about_vending_description" />
 
         </LinearLayout>
@@ -186,22 +146,22 @@
 
       <LinearLayout
         android:id="@+id/linear_about_github"
-        style="@style/Widget.Studi.LinearLayout.ListItem.TwoLine.Clickable"
-        android:background="@drawable/ripple_bg_list_item">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
+        android:background="@drawable/ripple_list_item_bg">
 
         <ImageView
-          style="@style/Widget.Studi.ImageView.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:src="@drawable/ic_round_github"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Widget.Studi.LinearLayout.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.OverLine"
+            style="@style/Widget.Doodle.TextView.ListItem.OverLine"
             android:text="@string/about_github" />
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/about_github_description" />
 
         </LinearLayout>
@@ -209,27 +169,27 @@
       </LinearLayout>
 
       <TextView
-        style="@style/Widget.Studi.TextView.Category"
+        style="@style/Widget.Doodle.TextView.Category"
         android:text="@string/title_licenses" />
 
       <LinearLayout
         android:id="@+id/linear_about_license_jost"
-        style="@style/Widget.Studi.LinearLayout.ListItem.TwoLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
         <ImageView
           android:id="@+id/image_about_license_jost"
-          style="@style/Widget.Studi.ImageView.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:src="@drawable/ic_round_copyright_anim"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Widget.Studi.LinearLayout.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/license_jost" />
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.Description"
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
             android:text="@string/license_jost_author" />
 
         </LinearLayout>
@@ -237,23 +197,47 @@
       </LinearLayout>
 
       <LinearLayout
-        android:id="@+id/linear_about_license_material_components"
-        style="@style/Widget.Studi.LinearLayout.ListItem.TwoLine.Clickable">
+        android:id="@+id/linear_about_license_lsf"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
         <ImageView
-          android:id="@+id/image_about_license_material_components"
-          style="@style/Widget.Studi.ImageView.ListItem.Icon"
+          android:id="@+id/image_about_license_lsf"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:src="@drawable/ic_round_copyright_anim"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Widget.Studi.LinearLayout.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/license_lsf" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/license_lsf_author" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/linear_about_license_material_components"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+
+        <ImageView
+          android:id="@+id/image_about_license_material_components"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_copyright_anim"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/license_material_components" />
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.Description"
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
             android:text="@string/license_author_google" />
 
         </LinearLayout>
@@ -262,22 +246,22 @@
 
       <LinearLayout
         android:id="@+id/linear_about_license_material_icons"
-        style="@style/Widget.Studi.LinearLayout.ListItem.TwoLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
         <ImageView
           android:id="@+id/image_about_license_material_icons"
-          style="@style/Widget.Studi.ImageView.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:src="@drawable/ic_round_copyright_anim"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Widget.Studi.LinearLayout.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/license_material_icons" />
 
           <TextView
-            style="@style/Widget.Studi.TextView.ListItem.Description"
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
             android:text="@string/license_author_google" />
 
         </LinearLayout>

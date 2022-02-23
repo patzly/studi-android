@@ -14,18 +14,17 @@
   ~ You should have received a copy of the GNU General Public License
   ~ along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
   ~
-  ~ Copyright (c) 2021 by Patrick Zedler
+  ~ Copyright (c) 2022 by Patrick Zedler
   -->
 
-<shape
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <solid android:color="@color/surface" />
-
-  <padding
-    android:top="8dp"
-    android:bottom="8dp" />
+  <solid android:color="?attr/colorSurface" />
 
   <corners android:radius="8dp" />
+
+  <padding
+    android:bottom="8dp"
+    android:top="8dp" />
 
 </shape>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <!--
   ~ This file is part of Studi Android.
   ~
@@ -14,73 +16,259 @@
   ~ You should have received a copy of the GNU General Public License
   ~ along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
   ~
-  ~ Copyright (c) 2021 by Patrick Zedler
+  ~ Copyright (c) 2022 by Patrick Zedler
   -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <!-- APP & WALLPAPER -->
+  <!-- APP -->
 
   <string name="app_name" translatable="false">Studi</string>
   <string name="app_developer" translatable="false">Patrick Zedler</string>
   <string name="app_mail" translatable="false">patrick@zedler.xyz</string>
   <string name="app_website" translatable="false">https://patrick.zedler.xyz</string>
   <string name="app_vending" translatable="false">http://play.google.com/store/apps/dev?id=8122479227040208191</string>
-  <string name="app_github" translatable="false">https://github.com/patzly/studi-android/</string>
+  <string name="app_github" translatable="false">https://github.com/patzly/doodle-android/</string>
 
   <!-- TITLES -->
 
+  <string name="title_download">Download</string>
   <string name="title_info">Information</string>
-  <string name="title_about">About</string>
   <string name="title_feedback">Feedback</string>
   <string name="title_licenses">Open source licenses</string>
-
-  <!-- LABELS -->
 
   <!-- ACTIONS -->
 
   <string name="action_close">Close</string>
   <string name="action_back">Back</string>
+  <string name="action_open_link">Open external website</string>
   <string name="action_reset">Reset</string>
   <string name="action_send_feedback">Send feedback</string>
   <string name="action_share">Share</string>
-  <string name="action_share_description">Tell your friends about Studi</string>
+  <string name="action_share_description">Tell your friends about Doodle</string>
   <string name="action_email">Send email</string>
   <string name="action_email_description">Contact the developer</string>
   <string name="action_rate">Rate on Google Play</string>
   <string name="action_rate_description">Support the development</string>
-  <string name="action_github">Studi on GitHub</string>
+  <string name="action_github">Doodle Android on GitHub</string>
   <string name="action_github_description">Open a new issue</string>
+  <string name="action_language_select">Select language</string>
+
+  <string name="action_download_plan">Download plan</string>
+
+  <!-- MESSAGES -->
+
+  <string name="msg_welcome">Welcome!</string>
+  <string name="msg_welcome_subtitle">Download your lecture plan with the button below to display it here.</string>
+
+  <string name="msg_file_invalid">File not valid!</string>
+  <string name="msg_file_loaded">Loaded File!</string>
+  <string name="msg_web_intro_1st">1. Navigate to the wanted lecture plan\n2. Click the calender export icon at the bottom of the page</string>
+  <string name="msg_web_intro_2nd">3. The download will start after ~10 secs</string>
+  <string name="msg_downloading">Download started\nPlease wait.</string>
+  <string name="msg_download_failed">Download failed!</string>
+
+  <!-- INFO -->
+
+  <!-- SETTINGS -->
+
+  <string name="other_title">Other options</string>
+  <string name="other_description">Rendering, language &amp; reset</string>
+  <string name="other_language">Language</string>
+  <string name="other_language_description">Many thanks to all the volunteer translators at Transifex! Please visit the project\'s GitHub page to learn how you can help make Doodle Live Wallpapers available for your language.</string>
+  <string name="other_language_system">System default: %1$s</string>
+  <string name="other_language_not_available">Not available</string>
+  <string name="other_gpu">Hardware acceleration</string>
+  <string name="other_gpu_description">Turn off if the wallpaper crashes</string>
+  <string name="other_gpu_info">Hardware acceleration is only available for Doodle starting with Android 8. The wallpaper animations might therefore be a bit jerky.</string>
+  <string name="other_launcher">Hide icon in launcher</string>
+  <string name="other_launcher_description">Settings will only be accessible in your system\'s live wallpaper picker</string>
+  <string name="other_theme">App color theme</string>
+  <string name="other_theme_description">Try another look</string>
+  <string name="other_theme_auto">Auto</string>
+  <string name="other_theme_light">Light</string>
+  <string name="other_theme_dark">Dark</string>
+  <string name="other_reset">Reset all settings</string>
+  <string name="other_reset_description">Does more than uninstalling would do, because the preferences are stored at a special place as they have to be accessible directly after device startup</string>
+
+
+  <!-- APPEARANCE -->
+
+
+
+  <!-- OTHER -->
 
   <!-- ABOUT -->
 
+  <string name="about_title">About</string>
+  <string name="about_description">Developer info &amp; more</string>
   <string name="about_version">Version</string>
   <string name="about_changelog">Changelog</string>
   <string name="about_changelog_description">What\'s new?</string>
   <string name="about_developer">Developer</string>
   <string name="about_vending" translatable="false">Google Play</string>
-  <string name="about_vending_description">Other apps by the developer</string>
+  <string name="about_vending_description">More apps by the developer</string>
   <string name="about_github" translatable="false">GitHub</string>
   <string name="about_github_description">Source code</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">A great app requires a lot of time and lives from the feedback of its users.\n\nDo you have any wishes, comments or questions? Contact me!\nOtherwise I would be very happy about a nice review in the Play Store.</string>
-  <string name="msg_share">Check out this HTWG LSF viewer app for Android: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_share">Check out this cool app to display our lecture plan: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.studi</string>
+
+  <string name="msg_random">All selected designs will be used</string>
+  <string name="msg_random_warning">Random wallpaper design is still active!</string>
   <string name="msg_reset">Reset all settings?</string>
+  <string name="msg_force_stop">Forced stop required to apply changes</string>
+  <string name="msg_apply_colors">Changed colors will be applied to the system the next time you turn off the screen</string>
+  <string name="msg_apply_changes">To apply (eventually) changed options a restart of the running wallpaper service is recommended. This cannot be done automatically.\nPlease force-stop Doodle in your system settings and then apply Doodle as your wallpaper again.</string>
+  <string name="msg_set_wallpaper">If you encounter an issue that breaks wallpaper animation when closing this app, please choose your system\'s wallpaper picker to select Doodle.\nOtherwise you can set it directly.</string>
+  <string name="msg_preview_missing">An error occurred, please select Doodle Live Wallpaper manually</string>
+  <string name="msg_picker_missing">Can\'t open wallpaper picker, please install a live wallpaper picker and try it again.</string>
 
   <!-- LICENSES -->
 
-  <string name="license_lsf" translatable="false">HTWG LSF Plan</string>
-  <string name="license_lsf_author" translatable="false">Henry Strobel</string>
-  <string name="license_lsf_link" translatable="false">https://github.com/GoneUp/Htwg_LsfPlan</string>
   <string name="license_jost" translatable="false">Jost* Typeface</string>
   <string name="license_jost_author" translatable="false">Owen Earl</string>
   <string name="license_jost_link" translatable="false">https://github.com/indestructible-type/Jost</string>
+  <string name="license_lsf" translatable="false">HTWG LSF Plan</string>
+  <string name="license_lsf_author" translatable="false">Henry Strobel</string>
+  <string name="license_lsf_link" translatable="false">https://github.com/GoneUp/Htwg_LsfPlan</string>
   <string name="license_author_google" translatable="false">Google</string>
   <string name="license_material_components" translatable="false">Material Components Android</string>
   <string name="license_material_components_link" translatable="false">https://github.com/material-components/material-components-android</string>
   <string name="license_material_icons" translatable="false">Material Design Icons</string>
   <string name="license_material_icons_link" translatable="false">https://github.com/google/material-design-icons</string>
+
+  <!-- ORIGINAL -->
+
+  <string name="title_activity_main">Lecture Plan</string>
+  <string name="title_activity_web_selector" translatable="false">Download</string>
+  <string name="title_activity_settings_activity_new">Settings</string>
+  <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3135430559590190/4069382066</string>
+  <string name="firebase_id" translatable="false">ca-app-pub-3135430559590190~9476787262</string>
+
+  <!-- Main -->
+  <string name="action_setCalender" translatable="false">Download Plan</string>
+  <string name="action_settings">Settings</string>
+  <string name="main_noCalender">Calender is missing.\nPlease download a Lecture Plan via Menu -> Download Calender</string>
+
+  <string name="main_lecture_day">%s</string>
+  <string name="main_lecture_change">Swipe to change</string>
+
+  <string name="main_button_reload" translatable="false">Download</string>
+  <string name="main_button_no" translatable="false">Nope</string>
+
+
+  <!-- Web -->
+
+
+  <!-- Settings -->
+  <string name="pref_cat_general">General</string>
+  <string name="pref_cat_notify">Notifications</string>
+  <string name="pref_cat_credits" translatable="false">Credits</string>
+
+  <string name="pref_title_enableNotifications">Enable Notifications</string>
+  <string name="pref_description_enableNotifications">Show next lecture (room/time) as a notification</string>
+
+  <string name="pref_title_info" translatable="false">Erstellt von Henry Strobel</string>
+  <string name="pref_description_info" translatable="false">Version:  </string>
+
+  <string name="pref_title_timeSetter">When do you want to be notfied?</string>
+  <string name="pref_description_timeSetter">%d Minutes before</string>
+
+  <string name="pref_title_refresh">Automatic sync</string>
+  <string name="pref_description_refresh" formatted="false">Update the plan every week. \nLast Update: %s</string>
+
+  <string name="pref_description_ads">Tip Jar!</string>
+  <string name="pref_title_ads">Enable Ads</string>
+
+  <string name="pref_reset" translatable="false">Reset</string>
+
+  <string name="pref_soundMode">Notification Tone</string>
+  <string name="pref_soundMode_default" translatable="false">Vibrate</string>
+
+  <string name="pref_soundMode_Silent">Silent</string>
+  <string name="pref_soundMode_Vib">Vibrate</string>
+  <string name="pref_soundMode_Sound">Sound</string>
+  <string-array name="pref_soundMode_entries">
+    <item>@string/pref_soundMode_Silent</item>
+    <item>@string/pref_soundMode_Vib</item>
+    <item>@string/pref_soundMode_Sound</item>
+  </string-array>
+  <string-array name="pref_soundMode_values" translatable="false">
+    <item>Silent</item>
+    <item>Vibrate</item>
+    <item>Sound</item>
+  </string-array>
+
+
+  <!-- Misc -->
+  <string name="notification_title">Next lecture</string>
+  <string name="notification_briefing_title">Evening briefing</string>
+  <string name="notification_long" formatted="false" translatable="false">%s - %s - %s</string>
+  <string name="notification_short" formatted="false" translatable="false">%s - %s</string>
+  <string name="notification_time" formatted="false">Time: %s to %s</string>
+  <string name="notification_topic" formatted="false">Topic: %s</string>
+  <string name="notification_room" formatted="false">Room: %s</string>
+  <string name="icon_content_description" translatable="false">Desc</string>
+  <string name="pref_github_info" translatable="false">Sourcecode on Github</string>
+  <string name="title_activity_html_web_selector" translatable="false">Download</string>
+  <string name="action_refesh">Refresh</string>
+  <string name="html_login_head">Personal Plan</string>
+  <string name="html_login_sub" translatable="false">Login</string>
+
+  <string name="html_login_username" translatable="false">Username</string>
+  <string name="html_login_password" translatable="false">Password</string>
+  <string name="html_login_save" translatable="false">Save login details</string>
+  <string name="html_login_cancel" translatable="false">Cancel</string>
+  <string name="html_login_login" translatable="false">Login</string>
+  <string name="pref_title_dl">Use old Downloader</string>
+  <string name="pref_description_dl">In case download plan is not working, check this</string>
+  <string name="main_set_today">Set today</string>
+
+  <string name="main_topic" formatted="false">Topic: %s\n</string>
+  <string name="main_startdate" formatted="false">Start Date: %s\n</string>
+  <string name="main_recurring" formatted="false">Recurring: %s\n</string>
+  <string name="main_comment" formatted="false">Comment: %s</string>
+  <string name="main_weekly">Weekly</string>
+
+
+  <string name="misc_baseUrl_HTWG" translatable="false"><![CDATA[https://lsf.htwg-konstanz.de]]></string>
+  <string name="misc_baseUrl_UNI_KN" translatable="false"><![CDATA[https://lsf.uni-konstanz.de]]></string>
+  <string name="misc_personalPlanURL" translatable="false"><![CDATA[/qisserver/rds?state=wplan&act=show&show=plan&P.subc=plan&navigationPosition=functions%2Cschedule&breadcrumb=schedule&topitem=functions&subitem=schedule]]></string>
+  <string name="misc_personalLoginURL" translatable="false"><![CDATA[/qisserver/rds?state=user&type=1&category=auth.login&re=last&startpage=portal.vm&breadCrumbSource=portal]]></string>
+  <string name="misc_coursesOverviewURL" translatable="false"><![CDATA[/qisserver/rds?state=verpublish&publishContainer=stgPlanList&navigationPosition=lectures%2CcurriculaschedulesList&breadcrumb=curriculaschedules&topitem=lectures&subitem=curriculaschedulesList]]></string>
+
+  <string name="about_github_url" translatable="false">https://github.com/GoneUp/Htwg_LsfPlan</string>
+  <string name="pref_set_college">Set College</string>
+  <string name="pref_skipweekend_desc">Skip weekend on wipe to save time</string>
+  <string name="pref_skipweekend_title">Skip weekend</string>
+  <string name="dev_options" translatable="false">Dev options</string>
+  <string name="pref_skipweekend_days_title">Only skip if there are no courses</string>
+  <string name="pref_skipweekend_days_desc">Skip the weekend normally, but show days with courses</string>
+  <string name="channel_name">Course Notifications</string>
+  <string name="channel_description">Informs the user about the next upcoming courses</string>
+  <string name="channel_remote_name">General Notifications</string>
+  <string name="channel_remote_description">Displays messages by the developer</string>
+  <string name="pref_title_about">About/Libraries/Licences</string>
+  <string name="action_show_test_notification">Show test notification</string>
+  <string name="action_synchronize_plan">Synchronize Plan</string>
+  <string name="main_calendar_updated">Successfully synchronized the schedule!</string>
+  <string name="main_calendar_updating">Synchronizing schedule..</string>
+  <string name="html_login_explainer">Please enter your HTWG login data. We need it to login at the server and download your personal plan. If you choose to save it, the data will stored encrypted on your local device.</string>
+  <string name="pref_description_enableBriefing">Shows the first lectures in the morning to help you setting your alarm clock right</string>
+  <string name="pref_title_enableBriefing">Enable Evening Briefing</string>
+  <string name="pref_title_briefingTime" formatted="false">Briefing Time: %s</string>
+  <string name="pref_description_briefingTime">Set the time you want to be remained</string>
+
+  <string name="notification_final_title">Very important Message!</string>
+  <string name="notification_final_text">Wow, it\'s this time of the year again. I hope you are prepared for the exams and wish you good grades 😃 \nThanks for using the app!</string>
+  <string name="notification_event_htwg" translatable="false">Sorry, dass es so lange gedauert hat, ich habe mein Studium an der HTWG abgeschlossen und nutze die App nicht mehr.\nJedenfalls ist jetzt der, von der HTWG zu verantwortende, Fehler behoben. Die HTWG liefert eine invalide Zertifikatskette für den LSF Server aus, was der App/Android nicht gefallen hat, jetzt wird es ignoriert.\nViel Spaß weiterhin,\n Henry (Ex-AINler 😁)
+    </string>
+  <string name="pref_privacynotice_title">Privacy Notice</string>
+  <string name="about_privacynotice_url" translatable="false">https://raw.githubusercontent.com/GoneUp/Htwg_LsfPlan/master/Privacy_Policy.md</string>
+
+
 
 </resources>

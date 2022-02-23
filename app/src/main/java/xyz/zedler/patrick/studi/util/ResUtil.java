@@ -1,20 +1,20 @@
 /*
- * This file is part of Doodle Android.
+ * This file is part of Studi Android.
  *
- * Doodle Android is free software: you can redistribute it and/or modify
+ * Studi Android is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Doodle Android is distributed in the hope that it will be useful,
+ * Studi Android is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+ * along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2020-2021 by Patrick Zedler
+ * Copyright (c) 2022 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.studi.util;
@@ -29,12 +29,14 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.BulletSpan;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
+import androidx.annotation.AttrRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 import androidx.annotation.StringRes;
-import androidx.core.content.ContextCompat;
+import androidx.core.graphics.ColorUtils;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -42,7 +44,7 @@ import xyz.zedler.patrick.studi.R;
 
 public class ResUtil {
 
-  private final static String TAG = ResUtil.class.getSimpleName();
+  private static final String TAG = ResUtil.class.getSimpleName();
 
   @NonNull
   public static String getRawText(Context context, @RawRes int resId) {
@@ -56,7 +58,7 @@ public class ResUtil {
       text.deleteCharAt(text.length() - 1);
       inputStream.close();
     } catch (Exception e) {
-      Log.e(TAG, "getRawText: ", e);
+      Log.e(TAG, "getRawText", e);
     }
     return text.toString();
   }
@@ -75,7 +77,7 @@ public class ResUtil {
       return null;
     }
 
-    int color = ContextCompat.getColor(context, R.color.on_background);
+    int color = getColorAttr(context, R.attr.colorOnSurface);
     int margin = SystemUiUtil.spToPx(context, 6);
 
     String[] lines = text.split("\n");
@@ -110,5 +112,31 @@ public class ResUtil {
   public static boolean isLayoutRtl(Context context) {
     int direction = context.getResources().getConfiguration().getLayoutDirection();
     return direction == View.LAYOUT_DIRECTION_RTL;
+  }
+
+  public static int getColorAttr(Context context, @AttrRes int resId) {
+    TypedValue typedValue = new TypedValue();
+    context.getTheme().resolveAttribute(resId, typedValue, true);
+    return typedValue.data;
+  }
+
+  public static int getColorAttr(Context context, @AttrRes int resId, float alpha) {
+    return ColorUtils.setAlphaComponent(getColorAttr(context, resId), (int) (alpha * 255));
+  }
+
+  public static int getColorBg(Context context) {
+    return getColorAttr(context, android.R.attr.colorBackground);
+  }
+
+  public static int getColorOutline(Context context) {
+    return getColorAttr(context, R.attr.colorOutline);
+  }
+
+  public static int getColorOutlineSecondary(Context context) {
+    return getColorAttr(context, R.attr.colorOutline, 0.4f);
+  }
+
+  public static int getColorHighlight(Context context) {
+    return getColorAttr(context, R.attr.colorSecondary, 0.09f);
   }
 }

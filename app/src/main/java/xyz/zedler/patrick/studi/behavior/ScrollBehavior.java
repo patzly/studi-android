@@ -1,20 +1,20 @@
 /*
- * This file is part of Doodle Android.
+ * This file is part of Studi Android.
  *
- * Doodle Android is free software: you can redistribute it and/or modify
+ * Studi Android is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Doodle Android is distributed in the hope that it will be useful,
+ * Studi Android is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+ * along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2020-2021 by Patrick Zedler
+ * Copyright (c) 2022 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.studi.behavior;
@@ -23,22 +23,24 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import androidx.annotation.ColorRes;
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
 import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.elevation.SurfaceColors;
 import xyz.zedler.patrick.studi.R;
+import xyz.zedler.patrick.studi.util.ResUtil;
 
 public class ScrollBehavior {
 
-  private final static String TAG = ScrollBehavior.class.getSimpleName();
-  private final static boolean DEBUG = false;
+  private static final String TAG = ScrollBehavior.class.getSimpleName();
+  private static final boolean DEBUG = false;
 
   private static final int STATE_SCROLLED_DOWN = 1;
   private static final int STATE_SCROLLED_UP = 2;
@@ -94,7 +96,7 @@ public class ScrollBehavior {
             if (scrollY < pufferSize) {
               new Handler(Looper.getMainLooper()).postDelayed(() -> {
                 if (scrollY > 0) {
-                  this.scrollView.setOverScrollMode(View.OVER_SCROLL_NEVER);
+                  setOverScrollMode(View.OVER_SCROLL_NEVER);
                 }
               }, 1);
             }
@@ -117,7 +119,7 @@ public class ScrollBehavior {
   private void onTopScroll() {
     isTopScroll = true;
     if (liftOnScroll) {
-      tintAppBarLayout(R.color.background);
+      tintAppBarLayout(SurfaceColors.SURFACE_0.getColor(activity));
       appBarLayout.setLifted(false);
     }
     if (DEBUG) {
@@ -128,7 +130,7 @@ public class ScrollBehavior {
   private void onScrollUp() {
     currentState = STATE_SCROLLED_UP;
     appBarLayout.setLifted(true);
-    tintAppBarLayout(R.color.primary);
+    tintAppBarLayout(SurfaceColors.SURFACE_2.getColor(activity));
     if (DEBUG) {
       Log.i(TAG, "onScrollUp: UP");
     }
@@ -140,8 +142,8 @@ public class ScrollBehavior {
     currentState = STATE_SCROLLED_DOWN;
     if (scrollView != null) {
       appBarLayout.setLifted(true);
-      tintAppBarLayout(R.color.primary);
-      scrollView.setOverScrollMode(
+      tintAppBarLayout(SurfaceColors.SURFACE_2.getColor(activity));
+      setOverScrollMode(
           noOverScroll ? View.OVER_SCROLL_NEVER : View.OVER_SCROLL_IF_CONTENT_SCROLLS
       );
     } else if (DEBUG) {
@@ -165,16 +167,16 @@ public class ScrollBehavior {
       if (lift) {
         if (scrollView.getScrollY() == 0) {
           appBarLayout.setLifted(false);
-          tintAppBarLayout(R.color.background);
-          scrollView.setOverScrollMode(View.OVER_SCROLL_NEVER);
+          tintAppBarLayout(SurfaceColors.SURFACE_0.getColor(activity));
+          setOverScrollMode(View.OVER_SCROLL_NEVER);
         } else {
           appBarLayout.setLifted(true);
-          tintAppBarLayout(R.color.primary);
+          tintAppBarLayout(SurfaceColors.SURFACE_2.getColor(activity));
         }
       } else {
         appBarLayout.setLifted(true);
-        tintAppBarLayout(R.color.primary);
-        scrollView.setOverScrollMode(
+        tintAppBarLayout(SurfaceColors.SURFACE_2.getColor(activity));
+        setOverScrollMode(
             noOverScroll
                 ? View.OVER_SCROLL_NEVER
                 : View.OVER_SCROLL_IF_CONTENT_SCROLLS
@@ -184,10 +186,10 @@ public class ScrollBehavior {
       if (lift) {
         appBarLayout.setLiftable(true);
         appBarLayout.setLifted(false);
-        tintAppBarLayout(R.color.background);
+        tintAppBarLayout(SurfaceColors.SURFACE_0.getColor(activity));
       } else {
         appBarLayout.setLiftable(false);
-        tintAppBarLayout(R.color.primary);
+        tintAppBarLayout(SurfaceColors.SURFACE_2.getColor(activity));
       }
     }
     if (DEBUG) {
@@ -223,9 +225,8 @@ public class ScrollBehavior {
         });
   }
 
-  private void tintAppBarLayout(@ColorRes int target) {
+  private void tintAppBarLayout(@ColorInt int targetColor) {
     int appBarColor = getAppBarLayoutColor();
-    int targetColor = ContextCompat.getColor(activity, target);
     if (appBarColor == targetColor) {
       return;
     }
@@ -242,8 +243,19 @@ public class ScrollBehavior {
   private int getAppBarLayoutColor() {
     Drawable background = appBarLayout.getBackground();
     if (background == null || background.getClass() != ColorDrawable.class) {
-      appBarLayout.setBackgroundColor(ContextCompat.getColor(activity, R.color.background));
+      appBarLayout.setBackgroundColor(ResUtil.getColorBg(activity));
     }
     return ((ColorDrawable) appBarLayout.getBackground()).getColor();
+  }
+
+  private void setOverScrollMode(int mode) {
+    if (scrollView == null) {
+      return;
+    }
+    if (Build.VERSION.SDK_INT >= 31) {
+      scrollView.setOverScrollMode(View.OVER_SCROLL_ALWAYS);
+    } else {
+      scrollView.setOverScrollMode(mode);
+    }
   }
 }

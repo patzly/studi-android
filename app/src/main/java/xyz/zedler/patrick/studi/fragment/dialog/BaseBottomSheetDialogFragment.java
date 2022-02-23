@@ -1,20 +1,20 @@
 /*
- * This file is part of Doodle Android.
+ * This file is part of Studi Android.
  *
- * Doodle Android is free software: you can redistribute it and/or modify
+ * Studi Android is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Doodle Android is distributed in the hope that it will be useful,
+ * Studi Android is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+ * along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2020-2021 by Patrick Zedler
+ * Copyright (c) 2022 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.studi.fragment.dialog;
@@ -33,22 +33,23 @@ import android.view.ViewTreeObserver;
 import android.view.Window;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
+import androidx.core.graphics.ColorUtils;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat.Type;
-import androidx.navigation.NavController;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.elevation.SurfaceColors;
 import xyz.zedler.patrick.studi.R;
 import xyz.zedler.patrick.studi.activity.MainActivity;
+import xyz.zedler.patrick.studi.util.ResUtil;
 import xyz.zedler.patrick.studi.util.SystemUiUtil;
 import xyz.zedler.patrick.studi.util.ViewUtil;
 
 public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
-  private final static String TAG = "BaseBottomSheet";
+  private static final String TAG = "BaseBottomSheet";
 
   private MainActivity activity;
   private Dialog dialog;
@@ -56,6 +57,7 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
   private ViewUtil viewUtil;
   private boolean isExpanded;
   private boolean lightNavBar;
+  private int backgroundColor;
 
   @Override
   public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -88,15 +90,17 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
             container.setClipChildren(false);
             container.setClipToPadding(false);
 
-            PaintDrawable background = new PaintDrawable(
-                ContextCompat.getColor(requireContext(), R.color.surface)
-            );
+            backgroundColor = SurfaceColors.SURFACE_1.getColor(activity);
+            PaintDrawable background = new PaintDrawable(backgroundColor);
             int radius = SystemUiUtil.dpToPx(requireContext(), 16);
             setCornerRadius(background, radius);
             sheet.setBackground(background);
 
             BottomSheetBehavior<View> behavior = BottomSheetBehavior.from(sheet);
-            behavior.setPeekHeight(SystemUiUtil.getDisplayHeight(requireContext()) / 2);
+            behavior.setPeekHeight(
+                SystemUiUtil.getDisplayHeight(requireContext()) / 2
+                + SystemUiUtil.dpToPx(activity, 64) // height of bottom sheet top bar
+            );
 
             boolean keepBelowStatusBar =
                 SystemUiUtil.getDisplayWidth(requireContext()) > behavior.getMaxWidth();
@@ -223,6 +227,8 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
         SystemUiUtil.isOrientationPortrait(requireContext()) || insetBottom > 0;
     boolean isDarkModeActive = SystemUiUtil.isDarkModeActive(requireContext());
 
+    int colorScrim = ColorUtils.setAlphaComponent(backgroundColor, (int) (0.7f * 255));
+
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) { // 29
       window.setStatusBarColor(Color.TRANSPARENT);
       if (SystemUiUtil.isNavigationModeGesture(requireContext())) {
@@ -231,50 +237,30 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
       } else {
         lightNavBar = !isDarkModeActive && isOrientationPortraitOrNavAtBottom;
         if (isOrientationPortraitOrNavAtBottom) {
-          window.setNavigationBarColor(
-              isDarkModeActive
-                  ? SystemUiUtil.SCRIM_DARK_SURFACE
-                  : SystemUiUtil.SCRIM_LIGHT
-          );
+          window.setNavigationBarColor(colorScrim);
         } else {
           window.setNavigationBarColor(
               isDarkModeActive ? SystemUiUtil.SCRIM_DARK_DIALOG : SystemUiUtil.SCRIM_LIGHT_DIALOG
           );
-          window.setNavigationBarDividerColor(
-              isDarkModeActive
-                  ? SystemUiUtil.SCRIM_DARK_DIALOG_DIVIDER
-                  : SystemUiUtil.SCRIM_LIGHT_DIALOG_DIVIDER
-          );
+          window.setNavigationBarDividerColor(ResUtil.getColorOutlineSecondary(activity));
         }
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) { // 28
       window.setStatusBarColor(Color.TRANSPARENT);
       lightNavBar = !isDarkModeActive && isOrientationPortraitOrNavAtBottom;
       if (isOrientationPortraitOrNavAtBottom) {
-        window.setNavigationBarColor(
-            isDarkModeActive
-                ? SystemUiUtil.SCRIM_DARK_SURFACE
-                : SystemUiUtil.SCRIM_LIGHT
-        );
+        window.setNavigationBarColor(colorScrim);
       } else {
         window.setNavigationBarColor(
             isDarkModeActive ? SystemUiUtil.SCRIM_DARK_DIALOG : SystemUiUtil.SCRIM_LIGHT_DIALOG
         );
-        window.setNavigationBarDividerColor(
-            isDarkModeActive
-                ? SystemUiUtil.SCRIM_DARK_DIALOG_DIVIDER
-                : SystemUiUtil.SCRIM_LIGHT_DIALOG_DIVIDER
-        );
+        window.setNavigationBarDividerColor(ResUtil.getColorOutlineSecondary(activity));
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // 26
       window.setStatusBarColor(Color.TRANSPARENT);
       lightNavBar = !isDarkModeActive && isOrientationPortraitOrNavAtBottom;
       if (isOrientationPortraitOrNavAtBottom) {
-        window.setNavigationBarColor(
-            isDarkModeActive
-                ? SystemUiUtil.SCRIM_DARK_SURFACE
-                : SystemUiUtil.SCRIM_LIGHT
-        );
+        window.setNavigationBarColor(colorScrim);
       } else {
         window.setNavigationBarColor(
             isDarkModeActive ? SystemUiUtil.SCRIM_DARK_DIALOG : SystemUiUtil.SCRIM_LIGHT_DIALOG
@@ -282,11 +268,7 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
       }
     } else  { // down to 21
       if (isOrientationPortraitOrNavAtBottom) {
-        window.setNavigationBarColor(
-            isDarkModeActive
-                ? SystemUiUtil.SCRIM_DARK_SURFACE
-                : SystemUiUtil.SCRIM
-        );
+        window.setNavigationBarColor(isDarkModeActive ? colorScrim : SystemUiUtil.SCRIM);
       } else {
         window.setNavigationBarColor(
             isDarkModeActive ? SystemUiUtil.SCRIM_DARK_DIALOG : SystemUiUtil.SCRIM_LIGHT_DIALOG
@@ -301,10 +283,6 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
   public ViewUtil getViewUtil() {
     return viewUtil;
-  }
-
-  public NavController getNavController() {
-    return activity.getNavController();
   }
 
   public void performHapticClick() {

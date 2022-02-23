@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Studi Android.
+  ~
+  ~ Studi Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Studi Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Studi Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2022 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+  <!-- TITLES -->
+
+  <string name="title_info">Informationen</string>
+  <string name="title_apply_changes">Änderungen anwenden</string>
+  <string name="title_feedback">Rückmeldung</string>
+  <string name="title_licenses">Open-Source-Lizenzen</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
+  <string name="label_degrees">%1$s°</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_close">Schließen</string>
+  <string name="action_back">Zurück</string>
+  <string name="action_open_link">Externe Website öffnen</string>
+  <string name="action_hide">Verbergen</string>
+  <string name="action_reset">Zurücksetzen</string>
+  <string name="action_deactivate">Deaktivieren</string>
+  <string name="action_select_all">Alle auswählen</string>
+  <string name="action_continue">Fortfahren</string>
+  <string name="action_open_app_info">App-Info öffnen</string>
+  <string name="action_set">Hintergrund festlegen</string>
+  <string name="action_set_directly">Direkt festlegen</string>
+  <string name="action_open_picker">Auswahl öffnen</string>
+  <string name="action_send_feedback">Feedback senden</string>
+  <string name="action_share">Teilen</string>
+  <string name="action_share_description">Freunden von Doodle erzählen</string>
+  <string name="action_email">Email senden</string>
+  <string name="action_email_description">Den Entwickler kontaktieren</string>
+  <string name="action_rate">Bei Google Play bewerten</string>
+  <string name="action_rate_description">Entwicklung unterstützen</string>
+  <string name="action_github">Doodle Android auf GitHub</string>
+  <string name="action_github_description">Neues Issue öffnen</string>
+  <string name="action_language_select">Sprache auswählen</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">Aussehen</string>
+  <string name="appearance_description">Design &amp; Farboptionen</string>
+  <string name="appearance_design">Design</string>
+  <string name="appearance_design_doodle">Pixel 4 Doodle-Kollektion</string>
+  <string name="appearance_design_monet">Pixel 6 Material-You-Kollektion</string>
+  <string name="appearance_design_anna">Live-Hintergründe à l\'Anna Kövecses</string>
+  <string name="appearance_variant">Variation</string>
+  <string name="appearance_night_mode">Nachtmodus</string>
+  <string name="appearance_night_mode_description">Abgedunkelte Farben</string>
+  <string name="appearance_follow_system">System folgen</string>
+  <string name="appearance_follow_system_description">Adaption des Designs</string>
+  <string name="appearance_white_text">Versuchen, weißen Text zu erzwingen</string>
+  <string name="appearance_white_text_description">Kann die Lesbarkeit beeinträchtigen</string>
+  <string name="appearance_random">Zufälliges Hintergrunddesign</string>
+  <string name="appearance_random_description">Bei jedem Ausschalten des Displays</string>
+  <string name="appearance_colors">Extrahierte Farben</string>
+  <string name="appearance_colors_description">Wird zur Berechnung des Textkontrasts verwendet</string>
+  <string name="appearance_colors_description_dynamic">Werden von dem Design-Generator des Systems genutzt</string>
+  <string name="appearance_colors_primary">Primäre Farbe auswählen</string>
+  <string name="appearance_colors_secondary">Sekundäre Farbe auswählen</string>
+  <string name="appearance_colors_tertiary">Tertiäre Farbe auswählen</string>
+  <string name="appearance_colors_info">Auf Geräten ohne Unterstützung für dynamische Farbschemas (Android 11 oder niedriger) wird nur die Primärfarbe verwendet, um den Textkontrast des Launchers zu berechnen und den Hintergrund des „Letzte Apps“-Bildschirms einzufärben.</string>
+  <string name="appearance_colors_info_dynamic">Auf Geräten mit Android 12 oder höher und Unterstützung für dynamische Farbschemas werden die drei ausgewählten Farben verwendet, um automatisch ein systemweites Farbschema zu erstellen.</string>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">Parallax-Effekt</string>
+  <string name="parallax_description">Wischen &amp; Neigung</string>
+  <string name="parallax_touch_wiz">Es scheint, dass dein aktueller Standard-Launcher Samsung TouchWiz ist, welcher kein Hintergrund-Scrolling unterstützt. Probiere einen anderen Launcher aus, um den Parallax-Effekt mit ausgeschalteter Neigungssensor-Option zu ermöglichen.\nDu kannst diese Warnung ignorieren, wenn du einen anderen Standard-Launcher festgelegt hast.</string>
+  <string name="parallax_intensity">Parallax-Stärke</string>
+  <string name="parallax_intensity_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen und Intensität des Neigungs-Effekts</string>
+  <string name="parallax_none">Aus</string>
+  <string name="parallax_swipe_power_save">Energiesparmodus beachten</string>
+  <string name="parallax_swipe_power_save_description">Parallax-Effekt pausieren, wenn der Energiesparmodus aktiv ist</string>
+  <string name="parallax_category_tilt">Neigungs-Effekt</string>
+  <string name="parallax_tilt">Auf Neigung des Gerätes reagieren</string>
+  <string name="parallax_tilt_description">Verbraucht mehr Akku</string>
+  <string name="parallax_refresh_rate">Aktualisierungsrate des Neigungs-Sensors</string>
+  <string name="parallax_refresh_rate_description">Zu kurze Abstände können die Zoom-Animationen beeinträchtigen</string>
+  <string name="parallax_damping">Bewegungsdämpfung</string>
+  <string name="parallax_damping_description">Verringern für weichere Bewegungen</string>
+  <string name="parallax_threshold">Bewegungsschwelle</string>
+  <string name="parallax_threshold_description">Erhöhen, um das kontinuierliche Rendern trotz kleiner Bewegungen zu pausieren</string>
+  <string name="parallax_tilt_power_save_description">Neigungs-Effekt pausieren, wenn der Energiesparmodus aktiv ist</string>
+
+  <!-- SIZE -->
+
+  <string name="size_title">Größe der Formen</string>
+  <string name="size_description">Skalierung &amp; Zoom-Effekt</string>
+  <string name="size_category_zoom">Zoom-Effekt</string>
+  <string name="size_category_launcher">Zoom auf Startbildschirm</string>
+  <string name="size_category_unlock">Zoom auf Sperrbildschirm</string>
+  <string name="size_scale">Skalierung</string>
+  <string name="size_scale_description">Nützlich für große Displays und Auflösungen</string>
+  <string name="size_zoom">Zoomstärke</string>
+  <string name="size_zoom_description">Je höher, desto weiter wird herausgezoomt</string>
+  <string name="size_zoom_rotation">Drehen ausgewählter Formen während des Zoomens</string>
+  <string name="size_zoom_rotation_description">Maximale Drehung in Grad</string>
+  <string name="size_zoom_power_save_description">Zoom-Effekt pausieren, wenn der Energiesparmodus aktiv ist</string>
+  <string name="size_zoom_launcher">Beim Öffnen der Schnelleinstellungen oder des App-Drawers herauszoomen</string>
+  <string name="size_zoom_launcher_description">Ist auf manchen Geräten nicht verfügbar</string>
+  <string name="size_zoom_damping">Animationsglättung</string>
+  <string name="size_zoom_damping_description">Aktivieren und verringern für weicheres Zoomen</string>
+  <string name="size_zoom_system">Zoom-Effekt des Systems nutzen</string>
+  <string name="size_zoom_system_description">Kann die ruckelige Zoom-Animation bei eingeschaltetem Neigungs-Effekt beheben, nur auf manchen Geräten verfügbar</string>
+  <string name="size_zoom_unlock">Auf dem Sperrbildschirm herauszoomen</string>
+  <string name="size_zoom_unlock_description">Eventuell ruckelig, wenn der Neigungs-Effekt eingeschaltet ist</string>
+  <string name="size_zoom_duration">Zoom-Dauer beim Entsperren</string>
+  <string name="size_zoom_duration_description">Verringern für schnellere Animationen</string>
+
+  <!-- OTHER -->
+
+  <string name="other_title">Sonstige Optionen</string>
+  <string name="other_description">Rendering, Sprache &amp; Reset</string>
+  <string name="other_language">Sprache</string>
+  <string name="other_language_description">Vielen Dank an alle freiwilligen Übersetzer*innen bei Transifex! Besuche die GitHub-Seite dieses Projekts, um zu erfahren, wie Du helfen kannst, Doodle Live Hintergründe für Deine Sprache verfügbar zu machen.</string>
+  <string name="other_language_system">Systemstandard: %1$s</string>
+  <string name="other_language_not_available">Nicht verfügbar</string>
+  <string name="other_gpu">Hardware-Beschleunigung</string>
+  <string name="other_gpu_description">Ausschalten, wenn der Hintergrund abstürzt</string>
+  <string name="other_gpu_info">Hardware-Beschleunigung ist für Doodle erst ab Android 8 verfügbar. Die Animationen könnten deshalb etwas ruckelig sein.</string>
+  <string name="other_launcher">App-Icon verbergen</string>
+  <string name="other_launcher_description">Einstellungen nur über Live-Hintergrund-Auswahl des Systems erreichbar</string>
+  <string name="other_theme">App-Farben</string>
+  <string name="other_theme_description">Probiere einen anderen Look aus!</string>
+  <string name="other_theme_auto">Auto</string>
+  <string name="other_theme_light">Hell</string>
+  <string name="other_theme_dark">Dunkel</string>
+  <string name="other_reset">Alle Einstellungen zurücksetzen</string>
+  <string name="other_reset_description">Bewirkt mehr als deinstallieren, da die Einstellungen an einem speziellen Ort gespeichert werden, damit sie direkt nach dem Einschalten des Geräts abrufbar sind</string>
+
+  <!-- ABOUT -->
+
+  <string name="about_title">Über</string>
+  <string name="about_description">Informationen über den Entwickler &amp; mehr</string>
+  <string name="about_version">Version</string>
+  <string name="about_changelog">Änderungen</string>
+  <string name="about_changelog_description">Was ist neu?</string>
+  <string name="about_developer">Entwickler</string>
+  <string name="about_vending_description">Weitere Apps des Entwicklers</string>
+  <string name="about_github_description">Quellcode</string>
+  <string name="about_translation_description">Hilf mit, Doodle in deine Sprache zu übersetzen</string>
+
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">Eine tolle App kostet viel Zeit und lebt von der Rückmeldung ihrer Nutzer.\n\nHast du Wünsche, Anmerkungen oder Fragen? Dann lass es mich wissen!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
+  <string name="msg_share">Schau dir mal diese coole Live-Wallpaper-App an: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">App-Icon verbergen?</string>
+  <string name="msg_random">Es werden alle ausgewählten Designs benutzt</string>
+  <string name="msg_random_warning">Zufälliges Hintergrunddesign ist noch aktiviert!</string>
+  <string name="msg_reset">Einstellungen zurücksetzen?</string>
+  <string name="msg_force_stop">Erzwungenes Beenden wird benötigt, um die Änderung anzuwenden</string>
+  <string name="msg_apply_colors">Geänderte Farben werden im System beim nächsten Ausschalten des Displays übernommen</string>
+  <string name="msg_apply_changes">Um (eventuelle) Änderungen anzuwenden, wird ein Neustart des laufenden Hintergrunds empfohlen. Dies kann nicht automatisch erfolgen.\nBitte beende die App in Deinen Systemeinstellungen und wende Doodle erneut als Live-Hintergrund an.</string>
+  <string name="msg_set_wallpaper">Falls die Animationen des Hintergrunds stoppen, sobald du diese App schließt, solltest du stattdessen die Hintergrundauswahl deines Systems öffnen, um Doodle dort auszuwählen.\nAnsonsten kannst du Doodle direkt als Hintergrund festlegen.</string>
+  <string name="msg_preview_missing">Es trat ein Fehler auf, bitte wähle den Doodle Live-Hintergrund manuell aus</string>
+  <string name="msg_picker_missing">Hintergrundauswahl konnte nicht geöffnet werden, bitte installiere erst eine App dafür</string>
+
+  <!-- ORIGINAL -->
+
+  <string name="action_settings">Einstellungen</string>
+  <string name="main_lecture_day" formatted="false">%s</string>
+  <string name="main_noCalender">Kein Plan vorhanden..\nBitte lade einen Vorlesungsplan via Menu -> Download Plan.</string>
+  <string name="notification_title">Nächste Vorlesung</string>
+  <string name="pref_cat_general">Allgemein</string>
+  <string name="pref_description_enableNotifications">Zeige Benachrichtigung bevor die Vorlesung beginnt</string>
+  <string name="pref_description_timeSetter">%d Minuten davor</string>
+  <string name="pref_soundMode">Benachrichtigungston</string>
+  <string name="pref_title_enableNotifications">Benachrichtigungen aktivieren</string>
+  <string name="pref_title_timeSetter">Wann willst eine Benachrichtigung erhalten?</string>
+  <string name="title_activity_settings_activity_new">Einstellungen</string>
+  <string name="webView_HowTo">1. Navigiere zum gewünschten Plan\n2. Drücke den Kalender Export Button am Seitenende</string>
+  <string name="webView_fileLoaded">Datei geladen!</string>
+  <string name="webView_fileLoading">Download gestartet\nBitte warten.</string>
+  <string name="webView_fileNotValid">Datei nicht valide!</string>
+  <string name="pref_soundMode_Silent">Lautlos</string>
+  <string name="pref_soundMode_Sound">Ton</string>
+  <string name="pref_soundMode_Vib">Vibration</string>
+  <string name="pref_description_ads">Trinkgeld!</string>
+  <string name="pref_title_ads">Werbung/Tracking aktivieren</string>
+  <string name="title_activity_main">Vorlesungsplan</string>
+  <string name="webView_HowToStep3">3. Der Download startet etwa nach ~10 secs</string>
+  <string name="pref_title_refresh">Automatische Synchronisation</string>
+  <string name="pref_description_refresh" formatted="false">Der Plan wird wöchentlich aktualisiert. \nLetztes Update: %s</string>
+  <string name="pref_cat_notify">Benachrichtigungen</string>
+  <string name="action_refesh">Refresh</string>
+  <string name="html_login_head">Persönlicher Stundenplan</string>
+  <string name="pref_title_dl">Benutze alten Downloader</string>
+  <string name="pref_description_dl">Wenn der Download des Planes nicht korrekt funktioniert..</string>
+  <string name="main_set_today">Heute</string>
+  <string name="main_comment">Kommentar: %s</string>
+  <string name="main_recurring">Zyklus: %s\n</string>
+  <string name="main_startdate">Datum: %s\n</string>
+  <string name="main_topic">Thema: %s\n</string>
+  <string name="main_weekly">Wöchentlich</string>
+  <string name="main_lecture_change">Wischen um den Tag zu ändern</string>
+  <string name="pref_set_college">Hochschule auswählen</string>
+  <string name="pref_skipweekend_title">Wochenende überspringen</string>
+  <string name="pref_skipweekend_desc">Wochenende beim Wischen überspringen</string>
+  <string name="pref_skipweekend_days_title">Nur leere Tage überspringen</string>
+  <string name="pref_skipweekend_days_desc">Nur Wochenendtage ohne Kurse überspringen</string>
+  <string name="channel_name">Kursbenachrichtigungen</string>
+  <string name="channel_description">Informiert den Nutzer über die nächsten Kurse</string>
+  <string name="pref_title_about">Über/Lizenzen</string>
+  <string name="action_show_test_notification">Testbenachrichtigung</string>
+  <string name="action_synchronize_plan">"Plan aktualisieren "</string>
+  <string name="main_calendar_updated">"Plan erfolgreich aktualisiert! "</string>
+  <string name="main_calendar_updating">Aktualisiere…</string>
+  <string name="channel_remote_name">Generelle Benachrichtigungen</string>
+  <string name="channel_remote_description">Hauptsächlich Infos und News vom Entwickler</string>
+  <string name="html_login_explainer">Bitte geben sie hier ihre HTWG Logindaten ein, diese sind nötig um den persönlichen Plan herunterzuladen. Wenn die Daten gespeichert werden sollen passiert das verschlüsselt auf dem lokalen Gerät.</string>
+  <string name="notification_briefing_title">Briefing</string>
+  <string name="pref_title_enableBriefing">Briefing aktivieren</string>
+  <string name="pref_description_enableBriefing">Du bekommst eine Benachrichtigung mit den ersten morgendlichen Kursen, um dir dabei zu helfen deinen Wecker zu stellen</string>
+  <string name="pref_title_briefingTime">Zeit des Briefings: %s</string>
+  <string name="pref_description_briefingTime">Wähle die Zeit für die Benachrichtigung aus</string>
+  <string name="notification_topic">Thema: %s</string>
+  <string name="notification_time">Zeit: %s bis %s</string>
+  <string name="notification_room">Raum: %s</string>
+  <string name="notification_final_title">Wichtige Nachricht! Wirklich!</string>
+  <string name="notification_final_text">Wow, es ist schon wieder diese Zeit des Jahres. Ich hoffe du bist gut auf die Klausuren vorbereiet und wünsche dir viel Glück 😃\n
+        \n
+        —Der Typ, der die App entwickelt hat\n
+        P.S. Mach mal eine Review im Playstore</string>
+  <string name="pref_privacynotice_title">Datenschutzhinweis</string>
+
+  </resources>
